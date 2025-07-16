@@ -69,7 +69,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Livraison possible</h3>
-              <p className="text-gray-600">Nous livrons votre van à l'adresse de votre choix</p>
+              <p className="text-gray-600">Nous livrons votre van à l&apos;adresse de votre choix</p>
             </div>
           </div>
         </div>

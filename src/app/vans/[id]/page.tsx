@@ -36,17 +36,17 @@ export default function VanDetailPage({ params }: VanDetailPageProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Image */}
-          <div className="rounded-xl h-96 relative overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 shadow-lg">
+          <div className="rounded-xl h-96 relative overflow-hidden">
             <img
               src={van.image}
               alt={van.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent"></div>
-            <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-full px-4 py-2 text-lg font-bold text-gray-800 shadow-sm">
+            <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+            <div className="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full px-4 py-2 text-lg font-bold text-gray-800">
               {van.pricePerDay}€/jour
             </div>
-            <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-full px-4 py-2 text-lg font-bold text-gray-800 shadow-sm">
+            <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 rounded-full px-4 py-2 text-lg font-bold text-gray-800">
               {van.sleeps} personnes
             </div>
           </div>
@@ -70,7 +70,7 @@ export default function VanDetailPage({ params }: VanDetailPageProps) {
             </div>
 
             {/* Price */}
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 border border-blue-100">
+            <div className="bg-blue-50 rounded-lg p-6">
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-2xl font-bold text-blue-600">
@@ -78,7 +78,7 @@ export default function VanDetailPage({ params }: VanDetailPageProps) {
                   </div>
                   <div className="text-gray-600">par jour</div>
                 </div>
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-sm">
+                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
                   Réserver
                 </button>
               </div>
@@ -89,7 +89,7 @@ export default function VanDetailPage({ params }: VanDetailPageProps) {
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Équipements inclus</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {van.extras.map((extra, index) => (
-                  <div key={index} className="flex items-center text-gray-600 bg-white rounded-lg p-3 border border-gray-100">
+                  <div key={index} className="flex items-center text-gray-600">
                     <svg className="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -100,10 +100,10 @@ export default function VanDetailPage({ params }: VanDetailPageProps) {
             </div>
 
             {/* Contact */}
-            <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-lg p-6 border border-gray-100">
+            <div className="bg-gray-50 rounded-lg p-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Questions ?</h3>
               <p className="text-gray-600 mb-4">
-                Contactez-nous pour plus d'informations sur ce van
+                Contactez-nous pour plus d&apos;informations sur ce van
               </p>
               <div className="space-y-2 text-gray-600">
                 <div>📧 contact@nomadix.fr</div>

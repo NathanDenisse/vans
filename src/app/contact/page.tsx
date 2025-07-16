@@ -86,7 +86,7 @@ export default function ContactPage() {
                 >
                   <option value="">Choisissez un sujet</option>
                   <option value="reservation">Réservation de van</option>
-                  <option value="information">Demande d'information</option>
+                  <option value="information">Demande d&apos;information</option>
                   <option value="support">Support technique</option>
                   <option value="other">Autre</option>
                 </select>
@@ -165,7 +165,7 @@ export default function ContactPage() {
             {/* Business Hours */}
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Horaires d'ouverture
+                Horaires d&apos;ouverture
               </h2>
 
               <div className="space-y-3">
@@ -185,7 +185,7 @@ export default function ContactPage() {
 
               <div className="mt-6 p-4 bg-blue-50 rounded-lg">
                 <p className="text-sm text-blue-800">
-                  <strong>Urgence :</strong> Pour les réservations en urgence, contactez-nous par téléphone même en dehors des horaires d'ouverture.
+                  <strong>Urgence :</strong> Pour les réservations en urgence, contactez-nous par téléphone même en dehors des horaires d&apos;ouverture.
                 </p>
               </div>
             </div>

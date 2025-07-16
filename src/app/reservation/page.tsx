@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { MapPin, Calendar, Users, Star, Search, Calculator } from 'lucide-react';
 import AdvancedCalendar from '@/components/AdvancedCalendar';
@@ -74,7 +74,7 @@ const locations: Location[] = [
   },
 ];
 
-export default function ReservationPage() {
+function ReservationContent() {
   const searchParams = useSearchParams();
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
   const [startDate, setStartDate] = useState<Date | null>(null);
@@ -320,5 +320,20 @@ export default function ReservationPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ReservationPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Chargement...</p>
+        </div>
+      </div>
+    }>
+      <ReservationContent />
+    </Suspense>
   );
 } 

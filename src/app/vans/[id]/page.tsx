@@ -1,17 +1,24 @@
-import { vans } from '@/lib/vans';
+import { vans } from '@/lib/vans-data';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
 interface VanDetailPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function VanDetailPage({ params }: VanDetailPageProps) {
-  const van = vans.find(v => v.id === params.id);
+export default async function VanDetailPage({ params }: VanDetailPageProps) {
+  const { id } = await params;
+
+  // Debug: afficher l'ID reçu
+  console.log('ID reçu:', id);
+  console.log('IDs disponibles:', vans.map(v => v.id));
+
+  const van = vans.find(v => v.id === id);
 
   if (!van) {
+    console.log('Van non trouvé pour l\'ID:', id);
     notFound();
   }
 
